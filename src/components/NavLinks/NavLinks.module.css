@@ -1,0 +1,19 @@
+.list {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.link {
+  color: #fafafa;
+  font-weight: 500;
+  transition: color 300ms ease-in;
+}
+
+.link:hover {
+  color: #5e9de9;
+}
+
+.active {
+  color: #2077e1;
+}
