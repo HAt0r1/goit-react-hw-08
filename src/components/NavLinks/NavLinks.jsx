@@ -1,17 +1,27 @@
 import { NavLink } from "react-router-dom";
+import style from "./NavLinks.module.css";
+import clsx from "clsx";
+
+const styleLink = ({ isActive }) => {
+  return clsx(style.link, isActive && style.active);
+};
 
 const NavLinks = () => {
   return (
-    <div>
-      <ul>
+    <>
+      <ul className={style.list}>
         <li>
-          <NavLink>Home</NavLink>
+          <NavLink to="/" className={styleLink}>
+            Home
+          </NavLink>
         </li>
         <li>
-          <NavLink>Contacts</NavLink>
+          <NavLink to="/contacts" className={styleLink}>
+            Contacts
+          </NavLink>
         </li>
       </ul>
-    </div>
+    </>
   );
 };
 

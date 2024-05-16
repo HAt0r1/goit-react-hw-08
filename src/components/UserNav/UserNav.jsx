@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import style from "./UserNav.module.css";
 
 const UserNav = () => {
   return (
-    <div>
-      <p>UserName</p>
-      <Link>Logout</Link>
+    <div className={style.container}>
+      <p className={style.username}>UserName</p>
+      <Link className={style.logOut}>Logout</Link>
     </div>
   );
 };
