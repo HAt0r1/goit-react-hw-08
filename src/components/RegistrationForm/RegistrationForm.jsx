@@ -1,5 +1,7 @@
 import { Formik, Form, Field } from "formik";
 import { useId } from "react";
+import { useDispatch } from "react-redux";
+import { signUser } from "../../redux/auth/operations";
 
 import style from "./RegistrationForm.module.css";
 
@@ -7,10 +9,19 @@ const RegistrationForm = () => {
   const usernameId = useId();
   const emailId = useId();
   const passwordId = useId();
+  const dispatch = useDispatch();
+
+  const handleSignUp = (values, actions) => {
+    dispatch(signUser(values));
+    actions.resetForm();
+  };
 
   return (
     <>
-      <Formik>
+      <Formik
+        initialValues={{ name: "", email: "", password: "" }}
+        onSubmit={handleSignUp}
+      >
         <Form className={style.form}>
           <div>
             <label className={style.label} htmlFor={usernameId}>
