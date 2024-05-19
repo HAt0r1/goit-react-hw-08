@@ -2,6 +2,7 @@ import { Formik, Form, Field } from "formik";
 import { useId } from "react";
 import { useDispatch } from "react-redux";
 import { signUser } from "../../redux/auth/operations";
+import { useToast } from "../Toast/Toast";
 
 import style from "./RegistrationForm.module.css";
 
@@ -10,9 +11,10 @@ const RegistrationForm = () => {
   const emailId = useId();
   const passwordId = useId();
   const dispatch = useDispatch();
+  const { successToast, errorToast } = useToast();
 
   const handleSignUp = (values, actions) => {
-    dispatch(signUser(values));
+    dispatch(signUser(values)).unwrap().then(successToast).catch(errorToast);
     actions.resetForm();
   };
 

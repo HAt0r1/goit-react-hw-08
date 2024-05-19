@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import NavBar from "../NavBar/NavBar";
 
 const Layot = ({ children }) => {
@@ -5,6 +6,7 @@ const Layot = ({ children }) => {
     <div>
       <NavBar />
       {children}
+      <Toaster />
     </div>
   );
 };
