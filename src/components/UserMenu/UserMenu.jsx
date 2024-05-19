@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import style from "./UserNav.module.css";
+import style from "./UserMenu.module.css";
 import { selectUser } from "../../redux/auth/selectors";
 import { useSelector, useDispatch } from "react-redux";
 import { logOutUser } from "../../redux/auth/operations";

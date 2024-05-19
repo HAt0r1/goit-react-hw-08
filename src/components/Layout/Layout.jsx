@@ -1,10 +1,10 @@
 import { Toaster } from "react-hot-toast";
-import NavBar from "../NavBar/NavBar";
+import AppBar from "../AppBar/AppBar";
 
 const Layot = ({ children }) => {
   return (
     <div>
-      <NavBar />
+      <AppBar />
       {children}
       <Toaster />
     </div>
