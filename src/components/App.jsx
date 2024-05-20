@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense, useEffect } from "react";
 import Fallback from "../components/Fallback/Fallback";
-
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Layot from "./Layout/Layout";
 import RestrictedRoute from "./RestrictedRoute";
 import PrivateRoute from "./PrivateRoute";
@@ -35,14 +35,14 @@ const App = () => {
                 element={<PrivateRoute component={<ContactsPage />} />}
               />
               <Route
-                path="/signup"
+                path="/register"
                 element={<RestrictedRoute component={<SignUpPage />} />}
               />
               <Route
                 path="/login"
                 element={<RestrictedRoute component={<LoginPage />} />}
               />
-              <Route path="*" element={<Error />} />
+              <Route path="*" element={<ErrorPage />} />
             </Routes>
           </Suspense>
         </Layot>
